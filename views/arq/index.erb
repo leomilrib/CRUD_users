@@ -1,0 +1,8 @@
+<ul>
+<% @users.each do |u| %>
+ <li>
+   <h4><a href="/users/<%= u.id %>"><%= u.nm_usuario %></a></h4>
+   <p>Created: <%= u.created_at %></p>
+ </li>
+<% end %>
+</ul>
