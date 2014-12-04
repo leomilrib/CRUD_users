@@ -1,2 +1,4 @@
-<h1><%= @user.nm_usuario %></h1>
-<p><%= @user.nr_cpf %></p>
+<h1><%=h @user.nm_usuario %></h1>
+<p><%=h @user.nr_cpf %></p>
+<br>
+<a href="/users/<%= @user.id %>/edit">Editar Usuário</a>

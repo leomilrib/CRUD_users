@@ -23,6 +23,8 @@ get '/' do
 end
 
 helpers do
+	include Rack::Utils
+  alias_method :h, :escape_html
 	def title
 		if @title
 			"#{@title}"
@@ -47,10 +49,27 @@ post "/users" do
 	end
 end
 
+#visualizar usuarios
+
 get "/users/:id" do
 	@user = Usuario.find(params[:id])
 	@title = @user.nm_usuario
 	erb :"users/view"
 end
+
+#editar usuários
+
+get "/users/:id/edit" do
+	@user = Usuario.find(params[:id])
+	@title = "Editar Usuario"
+	erb :"users/edit"
+end
+
+put "/users/:id" do
+	@user = Usuario.find(params[:id])
+	@user.update(params[:user])
+	redirect "/users/#{@user.id}"
+end
+
 
 

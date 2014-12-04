@@ -1,0 +1,41 @@
+<h2>Editar Usuário</h2>
+<br/>
+<form action="/users/<%= @user.id %>" method="post">
+<input type="hidden" name="_method" value="put">
+<div>
+	<label for="nm_user">Nome: </label>
+	<br>
+	<input id="nm_user" name="user[nm_usuario]" type="text" value="<%=h @user.nm_usuario %>" style="width=90%">
+</div>
+
+<div>
+	<label for="nm_endereco">Endereço: </label>
+	<br>
+	<input id="nm_endereco" name="user[nm_endereco]" type="text" value="<%=h @user.nm_endereco %>" style="width=90%">
+</div>
+
+<div>
+	<label for="nm_cpf">CPF</label>
+	<br>
+	<input id="nm_cpf" name="user[nr_cpf]" type="text" value="<%=h @user.nr_cpf %>" stype="width=90%">
+</div>
+
+<div>
+	<label for="nm_sexo">Sexo</label>
+	<br>
+	<input id="nm_sexo" name="user[nm_sexo]" type="text" value="<%=h @user.nm_sexo %>" stype="width=10%">
+</div>
+
+<div>
+	<label for="nm_tel">Telefone</label>
+	<br>
+	<input id="nm_tel" name="user[nr_telefone]" type="number" value="<%=h @user.nr_telefone %>" stype="width=90%">
+</div>
+
+<div>
+	<label for="dt_data">Data</label>
+	<br>
+	<input id="dt_data" name="user[dt_data]" type="date" value="<%=h @user.dt_data %>" stype="width=90%">
+</div>
+<br><br>
+<input type="submit" value="Editar">
