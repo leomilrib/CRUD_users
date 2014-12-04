@@ -1,0 +1,40 @@
+<h2>Criar Usuário</h2>
+<br/>
+<form action="/users" method="post" role="form">
+<div>
+	<label for="nm_user">Nome: </label>
+	<br>
+	<input id="nm_user" name="user[nm_usuario]" type="text" value="<%= @user.nm_usuario %>" style="width=90%">
+</div>
+
+<div>
+	<label for="nm_endereco">Endereço: </label>
+	<br>
+	<input id="nm_endereco" name="user[nm_endereco]" type="text" value="<%= @user.nm_endereco %>" style="width=90%">
+</div>
+
+<div>
+	<label for="nm_cpf">CPF</label>
+	<br>
+	<input id="nm_cpf" name="user[nr_cpf]" type="text" value="<%= @user.nr_cpf %>" stype="width=90%">
+</div>
+
+<div>
+	<label for="nm_sexo">Sexo</label>
+	<br>
+	<input id="nm_sexo" name="user[nm_sexo]" type="text" value="<%= @user.nm_sexo %>" stype="width=10%">
+</div>
+
+<div>
+	<label for="nm_tel">Telefone</label>
+	<br>
+	<input id="nm_tel" name="user[nr_telefone]" type="number" value="<%= @user.nr_telefone %>" stype="width=90%">
+</div>
+
+<div>
+	<label for="dt_data">Data</label>
+	<br>
+	<input id="dt_data" name="user[dt_data]" type="date" value="<%= @user.dt_data %>" stype="width=90%">
+</div>
+<br><br>
+<input type="submit" value="Criar">
