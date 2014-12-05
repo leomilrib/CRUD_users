@@ -10,6 +10,8 @@ gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
 gem "rspec"
 gem "rake"
+gem "rack"
+gem "capybara"
 
 group :development do
 	 gem 'sqlite3'
