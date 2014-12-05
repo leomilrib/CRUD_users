@@ -1,0 +1,41 @@
+<h2>Deletar Usuário</h2>
+<br/>
+<form action="/users/<%= @user.id %>/delete" method="post">
+<input type="hidden" name="_method" value="delete">
+<div>
+	<label for="nm_user">Nome: </label>
+	<br>
+	<%=h @user.nm_usuario %>
+</div>
+
+<div>
+	<label for="nm_endereco">Endereço: </label>
+	<br>
+	<%=h @user.nm_endereco %>
+</div>
+
+<div>
+	<label for="nm_cpf">CPF</label>
+	<br>
+	<%=h @user.nr_cpf %>
+</div>
+
+<div>
+	<label for="nm_sexo">Sexo</label>
+	<br>
+	<%=h @user.nm_sexo %>
+</div>
+
+<div>
+	<label for="nm_tel">Telefone</label>
+	<br>
+	<%=h @user.nr_telefone %>
+</div>
+
+<div>
+	<label for="dt_data">Data</label>
+	<br>
+	<%=h @user.dt_data %>
+</div>
+<br><br>
+<input type="submit" value="Deletar">

@@ -1,4 +1,9 @@
-<h1><%=h @user.nm_usuario %></h1>
-<p><%=h @user.nr_cpf %></p>
+<h1>Usuário: <%=h @user.nm_usuario %></h1>
+<p>Endereço: <%=h @user.nm_endereco %></p>
+<p>CPF: <%=h @user.nr_cpf %></p>
+<p>Sexo: <%=h @user.nm_sexo %></p>
+<p>Telefone: <%=h @user.nr_telefone %></p>
+<p>Data de Nascimento: <%= h @user.dt_data.strftime("%d/%m/%Y") %></p>
 <br>
 <a href="/users/<%= @user.id %>/edit">Editar Usuário</a>
+<a href="/users/<%= @user.id %>/delete">Deletar Usuário</a>

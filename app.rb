@@ -24,7 +24,7 @@ end
 
 helpers do
 	include Rack::Utils
-  alias_method :h, :escape_html
+  	alias_method :h, :escape_html
 	def title
 		if @title
 			"#{@title}"
@@ -71,5 +71,17 @@ put "/users/:id" do
 	redirect "/users/#{@user.id}"
 end
 
+#deletar usuários
 
+get "/users/:id/delete" do
+	@user = Usuario.find(params[:id])
+	@title = "Deletar Usuário"
+	erb :"users/delete"
+end
+
+delete "/users/:id/delete" do
+	@user = Usuario.find(params[:id])
+	@user.destroy
+	redirect "/"
+end
 

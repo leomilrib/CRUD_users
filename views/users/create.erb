@@ -1,7 +1,6 @@
 <h2>Criar Usuário</h2>
+<form action="/users" method="post">
 <br/>
-<form action="/users" method="post" role="form">
-<div>
 	<label for="nm_user">Nome: </label>
 	<br>
 	<input id="nm_user" name="user[nm_usuario]" type="text" value="<%= @user.nm_usuario %>" style="width=90%">
@@ -38,3 +37,4 @@
 </div>
 <br><br>
 <input type="submit" value="Criar">
+</form>
