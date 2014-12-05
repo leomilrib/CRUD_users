@@ -12,7 +12,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20141204170831) do
-
   create_table "usuarios", force: true do |t|
     t.string   "nm_usuario"
     t.string   "nm_endereco"
