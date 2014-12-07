@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
@@ -35,7 +37,7 @@ helpers do
 end
 
 get "/users/create" do
-	@title = "Criação de Usuário"
+	@title = "Criacao de Usuário"
 	@user = Usuario.new
 	erb :"users/create"
 end
