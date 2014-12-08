@@ -14,17 +14,6 @@ gem "rack"
 gem "capybara"
 
 group :development do
-	 gem 'sqlite3'
-	  gem "tux"
-end
-
-group :production do
-	 gem 'pg'
-end
-
-gem "rake"
-
-group :development do
  gem 'sqlite3'
  gem "tux"
 end
