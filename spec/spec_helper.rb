@@ -1,9 +1,10 @@
+ENV['RACK_ENV'] = 'test'
+
 require 'rack/test'
 require 'capybara/dsl'
-
 require File.expand_path '../../app.rb', __FILE__
 
-ENV['RACK_ENV'] = 'test'
+ActiveRecord::Base.logger.level = 1
 
 module RSpecMixin
   include Rack::Test::Methods
