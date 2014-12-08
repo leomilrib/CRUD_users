@@ -66,8 +66,11 @@ end
 
 put "/users/:id" do
 	@user = Usuario.find(params[:id])
-	@user.update(params[:user])
-	redirect "/users/#{@user.id}"
+	if @user.update(params[:user])
+		redirect "/users/#{@user.id}", :notice => 'Usuário alterado com sucesso'
+	else
+		redirect "/users/#{@user.id}", :error => 'Falha ao alterar Usuário'
+	end
 end
 
 #deletar usuários
