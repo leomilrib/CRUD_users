@@ -5,7 +5,13 @@ require './app'
 
 describe "CRUD Usuario" do
   before do
-    id = Usuario.create(nm_usuario: "Carlos", nm_endereco: "Sambaiatuba", nr_cpf: "98765432109", nm_sexo: "M", nr_telefone: "1444444444", dt_data: "22/02/1982")
+    Usuario.create(nm_usuario: "Carlos",
+      nm_endereco: "Sambaiatuba",
+      nr_cpf: "98765432109",
+      nm_sexo: "M",
+      nr_telefone: "1444444444",
+      dt_data: "22/02/1982"
+    )
   end
 
   after do
@@ -23,20 +29,7 @@ describe "CRUD Usuario" do
     fill_in('Data', with: '20/01/1984')
     click_button('Criar')
 
-    expect(page).to have_content('Antonio')
-  end
-
-  it "listar usuario" do
-  id = Usuario.create(nm_usuario: "Antonio", nm_endereco: "Sambaiatuba", nr_cpf: "98765432109", nm_sexo: "M", nr_telefone: "1444444444", dt_data: "22/02/1982")
-  id = Usuario.create(nm_usuario: "Nogueira", nm_endereco: "Sambaiatuba", nr_cpf: "98765432109", nm_sexo: "M", nr_telefone: "1444444444", dt_data: "22/02/1982")
-  id = Usuario.create(nm_usuario: "Junior", nm_endereco: "Sambaiatuba", nr_cpf: "98765432109", nm_sexo: "M", nr_telefone: "1444444444", dt_data: "22/02/1982")
-  id = Usuario.create(nm_usuario: "AutoSeg", nm_endereco: "Sambaiatuba", nr_cpf: "98765432109", nm_sexo: "M", nr_telefone: "1444444444", dt_data: "22/02/1982")
-  visit '/'
-    expect(page).to have_content('Carlos')
-    expect(page).to have_content('Antonio')
-    expect(page).to have_content('Nogueira')
-    expect(page).to have_content('Junior')
-    expect(page).to have_content('AutoSeg')
+    expect(page).to have_content('Usuário inserido com sucesso')
   end
 
   it "editar usuario" do
@@ -51,7 +44,7 @@ describe "CRUD Usuario" do
     fill_in('Data', with: '20/01/1984')
     click_button('Editar')
 
-    expect(page).to have_content('Antonio')
+    expect(page).to have_content('Usuário alterado com sucesso')
   end
 
 it "deletar usuario" do
@@ -59,7 +52,7 @@ it "deletar usuario" do
     click_link('Carlos')
     click_link('Deletar Usuário')
     click_button('Deletar')
-    expect(page).to have_content('')
+    expect(page).not_to have_content('Carlos')
   end
 
 
