@@ -8,7 +8,6 @@ require 'sinatra/redirect_with_flash'
 
 enable :sessions
 
-
 class Usuario < ActiveRecord::Base
 	validates :nm_usuario, presence: true
 	validates :nm_endereco, presence: true
@@ -52,7 +51,6 @@ post "/users" do
 end
 
 #visualizar usuarios
-
 get "/users/:id" do
 	@user = Usuario.find(params[:id])
 	@title = @user.nm_usuario
@@ -60,7 +58,6 @@ get "/users/:id" do
 end
 
 #editar usuários
-
 get "/users/:id/edit" do
 	@user = Usuario.find(params[:id])
 	@title = "Editar Usuario"
@@ -74,7 +71,6 @@ put "/users/:id" do
 end
 
 #deletar usuários
-
 get "/users/:id/delete" do
 	@user = Usuario.find(params[:id])
 	@title = "Deletar Usuário"
