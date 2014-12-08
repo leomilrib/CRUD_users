@@ -5,7 +5,7 @@ require './app'
 
 describe "CRUD Usuario" do
   before do
-    Usuario.create(nm_usuario: "Carlos",
+    @user = Usuario.create!(nm_usuario: "Carlos",
       nm_endereco: "Sambaiatuba",
       nr_cpf: "98765432109",
       nm_sexo: "M",
@@ -33,15 +33,8 @@ describe "CRUD Usuario" do
   end
 
   it "editar usuario" do
-    visit '/'
-    click_link('Carlos')
-    click_link('Editar Usuário')
+    visit "/users/#{@user.id}/edit"
     fill_in('Nome:', with: 'Antonio')
-    fill_in('Endereço', with: 'Rua')
-    fill_in('CPF', with: '12340987564' )
-    fill_in('Sexo', with: 'M')
-    fill_in('Telefone', with: '1333333333')
-    fill_in('Data', with: '20/01/1984')
     click_button('Editar')
 
     expect(page).to have_content('Usuário alterado com sucesso')
@@ -49,10 +42,10 @@ describe "CRUD Usuario" do
 
 it "deletar usuario" do
     visit '/'
-    click_link('Carlos')
+    click_link(@user.nm_usuario)
     click_link('Deletar Usuário')
     click_button('Deletar')
-    expect(page).not_to have_content('Carlos')
+    expect(page).not_to have_content(@user.nm_usuario)
   end
 
 
