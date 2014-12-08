@@ -6,9 +6,9 @@ class CreateUsers < ActiveRecord::Migration
     		u.string 	:nr_cpf
     		u.string 	:nm_sexo
     		u.integer	:nr_telefone
-    		u.date 		:dt_data 
+    		u.date 		:dt_data
     		u.timestamps
-  		 end
+  		end
  	end
 
 	 def self.down
