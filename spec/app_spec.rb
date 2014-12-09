@@ -3,7 +3,7 @@
 require 'spec_helper'
 require './app'
 
-describe "CRUD Usuario" do
+describe "CRUD Usuário" do
   before do
     @user = Usuario.create!(nm_usuario: "Carlos",
       nm_endereco: "Sambaiatuba",
@@ -18,7 +18,7 @@ describe "CRUD Usuario" do
     Usuario.delete_all
   end
 
-  it "criar usuario" do
+  it "cria um usuário com sucesso" do
     visit '/'
     click_link('Novo Usuário')
     fill_in('Nome', with: 'Antonio')
@@ -32,7 +32,7 @@ describe "CRUD Usuario" do
     expect(page).to have_content('Usuário inserido com sucesso')
   end
 
-  it "editar usuario" do
+  it "edita o usuário com sucesso" do
     visit "/users/#{@user.id}/edit"
     fill_in('Nome:', with: 'Antonio')
     click_button('Editar')
@@ -40,7 +40,7 @@ describe "CRUD Usuario" do
     expect(page).to have_content('Usuário alterado com sucesso')
   end
 
-it "deletar usuario" do
+it "deleta um usuário com sucesso" do
     visit '/'
     click_link(@user.nm_usuario)
     click_link('Deletar Usuário')
